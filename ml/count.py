@@ -2,12 +2,12 @@ import matplotlib.pyplot as plt
 import cv2
 import numpy
 
-path='../train/train3/Serial3_No2.tif'
+
 kernel = numpy.array([[0, -1, 0],
                    [-1, 5,-1],
                    [0, -1, 0]])
 
-def process(path):
+def count(path):
     frame = cv2.imread(path)
     image_sharp = cv2.filter2D(src=frame, ddepth=-1, kernel=kernel)
     gray = cv2.cvtColor(image_sharp, cv2.COLOR_BGR2GRAY)
@@ -19,5 +19,3 @@ def process(path):
 
     return len(cnt)
 
-
-print(process(path))
