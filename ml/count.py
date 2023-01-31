@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import cv2
 import numpy
-path='../data/train/image0.tif'
+
+path='../train/train3/Serial3_No2.tif'
 kernel = numpy.array([[0, -1, 0],
                    [-1, 5,-1],
                    [0, -1, 0]])
@@ -17,3 +18,6 @@ def process(path):
     cv2.drawContours(rgb, cnt, -1, (0,255,0), 2)
 
     return len(cnt)
+
+
+print(process(path))
