@@ -26,6 +26,11 @@ def home():
     return render_template('upload.html')
 
 
+
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
 @app.route('/upload', methods=['POST'])
 def upload_image():
     if 'file' not in request.files:
